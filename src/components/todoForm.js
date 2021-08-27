@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 function TodoForm(props) {
-const [input, setInput] = useState('')
+const [input, setInput] = useState(props.eidt ? props.edit.value : '');
 
 const inputRef = useRef(null);
 
@@ -27,6 +27,7 @@ const handleSubmit = e => {
     return (
         <div>
             <form className='todo-form' onSubmit = {handleSubmit}>
+
                 <input type='text' 
                 placeholder='Add a todo' 
                 value={input} 
